@@ -1,1 +1,37 @@
-<p>list works!</p>
+<h2>Pet List</h2>
+
+@switch (loadingStatus) {
+  @case (LoadingStatus.LOADING) {
+    <p class="message">
+      Loading data...
+    </p>
+  }
+  @case (LoadingStatus.SUCCESS) {
+
+    <div>
+      @for (f of (pets); track f.id) {
+
+        <div class="card">
+          <a [routerLink]="['/pets', f.id]">
+            <img class="images" [src]="f.image" [alt]="f.name">
+          </a>
+          <div class="card-content">
+            <span class="pet_name">{{ f.name }}</span>
+            <span class="pet_kind">{{ f.petKind | titlecase}}</span>
+            <span class="pet_age">{{ f.age }} years old</span>
+          </div>
+        </div>
+
+
+      }
+    </div>
+  }
+  @case (LoadingStatus.ERROR) {
+    <p class="message">
+      Data loading error!
+    </p>
+  }
+}
+
+
+

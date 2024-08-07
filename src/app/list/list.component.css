@@ -1,0 +1,60 @@
+
+
+.message {
+  font-size: 1.2em;
+  color: #555;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.2s;
+  margin: 20px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.pet_name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pet_age,
+.pet_kind {
+  font-size: 1.1em;
+  color: #777;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

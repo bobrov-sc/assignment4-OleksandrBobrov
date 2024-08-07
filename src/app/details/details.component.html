@@ -1,1 +1,34 @@
-<p>details works!</p>
+@switch (loadingStatus) {
+
+  @case (LoadingStatus.LOADING) {
+    <p class="message">
+      Loading data...
+    </p>
+  }
+  @case (LoadingStatus.SUCCESS) {
+    @if (pet !== undefined) {
+      <p>
+        <span class="pet_label">Pet: </span>
+        <span class="pet_name">{{ pet.name }}</span>
+      </p>
+      <p>
+        <img [src]='pet.image' [alt]='pet.name' class='flower_image'>
+      </p>
+      <div class="pet_age">
+        Age: {{ pet.age }}
+      </div>
+      <div class="pet_kind">
+        Kind: {{ pet.petKind }}
+      </div>
+    }
+  }
+  @case (LoadingStatus.ERROR) {
+    <p class="message">
+      Data loading error!
+    </p>
+  }
+}
+
+<p>
+  <a routerLink="/catalog">Pet List</a>
+</p>
